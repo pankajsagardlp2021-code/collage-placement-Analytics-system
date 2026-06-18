@@ -1,0 +1,23 @@
+Project Name:
+College Placement Analytics System
+
+Technology Stack:
+1. Python
+2. SQL Server
+3. Pandas
+4. Matplotlib
+
+Modules:
+1. Students
+2. Companies
+3. Skills
+4. StudentSkills
+5. Placements
+
+Reports:
+1. Total Students
+2. Total Placed Students
+3. Placement Percentage
+4. Highest Package
+5. Company Wise Hiring
+6. Branch Wise Placement

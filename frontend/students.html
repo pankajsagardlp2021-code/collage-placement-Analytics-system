@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students Directory | College Placement Analytics System</title>
+  <meta name="description" content="College Placement student directory. Search and filter students by name, branch, skills, and placement status.">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>CP-Analytics</span>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="sidebar-menu-item" id="menu-dashboard">
+          <a href="index.html">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="sidebar-menu-item" id="menu-students">
+          <a href="students.html">
+            <i class="fa-solid fa-user-graduate"></i>
+            <span>Students</span>
+          </a>
+        </li>
+        <li class="sidebar-menu-item" id="menu-companies">
+          <a href="companies.html">
+            <i class="fa-solid fa-building"></i>
+            <span>Companies</span>
+          </a>
+        </li>
+        <li class="sidebar-menu-item" id="menu-analytics">
+          <a href="analytics.html">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Analytics</span>
+          </a>
+        </li>
+        <li class="sidebar-menu-item" id="menu-placements">
+          <a href="placements.html">
+            <i class="fa-solid fa-clipboard-list"></i>
+            <span>Placements</span>
+          </a>
+        </li>
+      </ul>
+      <div class="sidebar-footer">
+        <span class="sidebar-footer-title">Academic Year</span>
+        <span class="sidebar-footer-info">Class of 2026</span>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <!-- Top Header -->
+      <header class="top-bar">
+        <div style="display: flex; align-items: center;">
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="page-info">
+            <h1 class="page-title">Students Directory</h1>
+            <span class="page-subtitle">Manage and screen academic profiles</span>
+          </div>
+        </div>
+        <div class="top-bar-actions">
+          <div class="system-status-pill">
+            <span class="system-status-indicator"></span>
+            <span>Database Connected</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Body -->
+      <main class="content-body">
+        
+        <!-- Search & Filters Panel -->
+        <div class="glass-card search-filter-panel">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="student-search-input" placeholder="Search by name, roll number, or skills (e.g. Java, Python)...">
+          </div>
+          <div class="filter-group">
+            <select class="filter-select" id="student-branch-filter">
+              <option value="All">All Branches</option>
+              <option value="CSE">CSE</option>
+              <option value="IT">IT</option>
+              <option value="ECE">ECE</option>
+              <option value="ME">ME</option>
+            </select>
+            <select class="filter-select" id="student-status-filter">
+              <option value="All">All Statuses</option>
+              <option value="Placed">Placed</option>
+              <option value="Rejected">Rejected</option>
+              <option value="In Progress">In Progress</option>
+            </select>
+            <button class="btn-reset" id="student-reset-btn">
+              <i class="fa-solid fa-arrow-rotate-left"></i> Reset
+            </button>
+          </div>
+        </div>
+
+        <!-- Student Database Table -->
+        <div class="glass-card">
+          <div class="card-header">
+            <span class="card-title">
+              <i class="fa-solid fa-users"></i>
+              Student Records
+            </span>
+            <span class="page-subtitle" id="student-record-count">Showing 50 of 50 students</span>
+          </div>
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Roll Number</th>
+                  <th>Branch</th>
+                  <th>GPA</th>
+                  <th>Skills</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="students-table-body">
+                <!-- Dynamically generated rows -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Data Script -->
+  <script src="js/data.js"></script>
+  <!-- Application Main Logic -->
+  <script src="js/main.js"></script>
+</body>
+</html>
